@@ -3,67 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruang.Trading × ASSO.dev | Spesialis Frontend Web</title>
+    <title>ASSO Frontend | Spesialis Frontend Web</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Fixed Navbar -->
     <header class="navbar">
         <div class="nav-brand">
-            <a href="/" class="logo">ASSO</a>
+            <a href="#home" class="logo">ASSO</a>
             <span class="brand-partner">× Ruang.Trading</span>
             <span class="badge">v3.0</span>
         </div>
         <nav>
-    <a href="/">Home</a>
-    <a href="/services.html">Services</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/portofolio.html">Portofolio</a>
-    <a href="/tools.html">Tools</a>
-    <a href="https://wa.me/62895327188128" class="btn-wa">Hubungi WA</a>
-    <a href="https://asso-tech.great-site.net" class="btn-tech" target="_blank" rel="noopener">ASSO.dev ↗</a>
-</nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#portofolio">Portofolio</a>
+            <a href="#tools">Tools</a>
+            <a href="#about">About</a>
+            <a href="https://wa.me/62895327188128" class="btn-wa">Hubungi WA</a>
+            <a href="https://asso-tech.great-site.net" class="btn-tech" target="_blank" rel="noopener">ASSO.dev ↗</a>
+        </nav>
     </header>
 
-    <main class="hero fade-in">
-        <div class="terminal-window">
-            <div class="terminal-bar">
-                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="title">ruang.trading@ass0:~/frontend</span>
-            </div>
-            <div class="terminal-body">
-                <p class="line">$ whoami</p>
-                <h1 class="typing">Spesialis Frontend Web</h1>
-                <p class="comment">// Landing Page · Portofolio · Web Component</p>
-                <p class="line mt-4">$ cat status.txt</p>
-                <div class="status-grid">
-                    <div class="status-item">🟢 Status <span>Open for Work</span></div>
-                    <div class="status-item">📡 Latency <span id="latency">--</span></div>
-                    <div class="status-item">⏱️ Uptime <span>99.98%</span></div>
-                    <div class="status-item">🧑‍💻 Queue <span>1-2 slot</span></div>
+    <!-- Main scroll container -->
+    <main class="scroll-container">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="full-section">
+            <div class="hero-content">
+                <div class="terminal-window">
+                    <div class="terminal-bar">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="title">ass0@root:~/frontend</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="line">$ whoami</p>
+                        <h1 class="typing">Spesialis Frontend Web</h1>
+                        <p class="comment">// Landing Page · Portfolio · Web Component</p>
+                        <p class="line mt-4">$ cat status.txt</p>
+                        <div class="status-grid">
+                            <div class="status-item">🟢 Status <span>Open for Work</span></div>
+                            <div class="status-item">📡 Latency <span id="latency">--</span></div>
+                            <div class="status-item">⏱️ Uptime <span>99.98%</span></div>
+                            <div class="status-item">🧑‍💻 Queue <span>1-2 slot</span></div>
+                        </div>
+                        <p class="line mt-4">$ cat partnership.txt</p>
+                        <blockquote class="quote">
+                            "Kami mengerjakan website Anda,<br>ASSO.dev menangani software & hardware."<br>
+                            <span class="comment">— Ruang.Trading × <a href="https://asso-tech.great-site.net" target="_blank" rel="noopener">ASSO.dev</a></span>
+                        </blockquote>
+                        <p class="line prompt mt-4">$ <span class="cursor">█</span></p>
+                    </div>
                 </div>
-                <p class="line mt-4">$ cat partnership.txt</p>
-                <blockquote class="quote">
-                    "Ruang.Trading × <a href="https://asso-tech.great-site.net" target="_blank" rel="noopener">ASSO.dev</a>"<br>
-                    <span class="comment">Satu standar, satu tanggung jawab. ASSO Frontend menghadirkan pengalaman web yang personal, sementara ASSO.dev menjaga performa software dan hardware Anda tetap di titik puncak. Karena eksekusi yang sempurna tidak butuh banyak suara.</span>
-                </blockquote>
-                <p class="line prompt mt-4">$ <span class="cursor">█</span></p>
+                <div class="cta-group fade-in delay-1">
+                    <a href="#services" class="btn-outline">Lihat Layanan</a>
+                    <a href="#pricing" class="btn-primary">Paket Harga</a>
+                    <a href="https://wa.me/62895327188128" class="btn-wa-large">WhatsApp Sekarang</a>
+                </div>
+                <!-- Bubble texts -->
+                <div class="bubble-text bubble-status">🟢 System Online</div>
+                <div class="bubble-text bubble-serve">Frontend Developer siap melayani</div>
             </div>
-        </div>
-        <div class="cta-group fade-in delay-1">
-            <a href="/services.html" class="btn-outline">Lihat Layanan</a>
-            <a href="/pricing.html" class="btn-primary">Paket Harga</a>
-            <a href="https://wa.me/62895327188128" class="btn-wa-large">WhatsApp Sekarang</a>
-        </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="full-section">
+            <div class="page-content-inner">
+                <h1 class="page-title">Layanan <span class="accent">Frontend</span></h1>
+                <p class="subtitle">Dikembangkan dengan presisi, dikirim dengan performa.</p>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="icon">📄</div>
+                        <h3>Landing Page</h3>
+                        <p>Konversi tinggi, desain responsif, speed 95+ PageSpeed. Cocok untuk produk atau personal brand.</p>
+                        <ul><li>1 halaman scroll</li><li>Optimasi SEO dasar</li><li>Form kontak fungsional</li></ul>
+                    </div>
+                    <div class="service-card reveal delay-1">
+                        <div class="icon">📁</div>
+                        <h3>Portfolio Website</h3>
+                        <p>Tampilkan karya dengan grid modern, animasi halus, dan performa tinggi di semua perangkat.</p>
+                        <ul><li>Multi‑halaman (3‑5)</li><li>Gallery & filter animasi</li><li>Dark/light mode</li></ul>
+                    </div>
+                    <div class="service-card reveal delay-2">
+                        <div class="icon">🧩</div>
+                        <h3>Web Component</h3>
+                        <p>Komponen interaktif kustom: kalkulator, dashboard, chart, atau integrasi API — ringan tanpa framework.</p>
+                        <ul><li>Vanilla JS / Web Component</li><li>Reusable & modular</li><li>Performa native</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="pricing" class="full-section">
+            <div class="page-content-inner">
+                <h1 class="page-title">Paket <span class="accent">Harga</span></h1>
+                <p class="subtitle">Pilih paket frontend yang sesuai dengan budget dan kebutuhanmu.</p>
+                <div class="pricing-grid" style="max-width:750px;margin-left:auto;margin-right:auto;">
+                    <div class="price-card reveal">
+                        <div class="price-header"><h3>Starter</h3><p class="price">Rp 200K</p><span class="est">sekali bayar</span></div>
+                        <ul><li>Landing Page 1 halaman</li><li>Responsif mobile</li><li>Basic SEO</li><li>Revisi 1x</li><li>Delivery 3 hari</li></ul>
+                        <a href="https://wa.me/62895327188128?text=Halo%20ASSO,%20saya%20tertarik%20paket%20Starter" class="btn-primary">Pilih Starter</a>
+                    </div>
+                    <div class="price-card highlight reveal delay-1">
+                        <div class="popular-badge">PALING DICARI</div>
+                        <div class="price-header"><h3>Standard</h3><p class="price">Rp 1.500.000</p><span class="est">per proyek</span></div>
+                        <ul><li>Portfolio / Company Profile</li><li>3-5 halaman</li><li>Optimasi speed 95+</li><li>Dark/Light mode</li><li>Revisi 2x</li><li>Delivery 7 hari</li></ul>
+                        <a href="https://wa.me/62895327188128?text=Halo%20ASSO,%20saya%20tertarik%20paket%20Standard" class="btn-primary">Pilih Standard</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTOFOLIO SECTION (penulisan KBBI) -->
+        <section id="portofolio" class="full-section">
+            <div class="page-content-inner">
+                <h1 class="page-title">Portofolio <span class="accent">Karya</span></h1>
+                <p class="subtitle">Beberapa website yang pernah saya bangun menggunakan HTML, CSS, JS vanilla.</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card reveal"><div class="portfolio-img"><span>📄</span></div><div class="portfolio-info"><h3>Landing Page Kopi Nusantara</h3><p>Single page, dark theme, form kontak, PageSpeed 98.</p><a href="#" class="btn-outline small">Live Demo</a></div></div>
+                    <div class="portfolio-card reveal delay-1"><div class="portfolio-img"><span>📁</span></div><div class="portfolio-info"><h3>Portfolio Fotografer</h3><p>3 halaman, galeri grid dengan lightbox, animasi scroll halus.</p><a href="#" class="btn-outline small">Live Demo</a></div></div>
+                    <div class="portfolio-card reveal delay-2"><div class="portfolio-img"><span>🧩</span></div><div class="portfolio-info"><h3>Kalkulator Trading</h3><p>Web component tanpa framework, real-time XAUUSD lot calculator.</p><a href="#tools" class="btn-outline small">Lihat Tools</a></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section id="tools" class="full-section">
+            <div class="page-content-inner">
+                <h1 class="page-title">Lot Size <span class="accent">Calculator</span></h1>
+                <p class="subtitle">XAUUSD • Contract size 100 oz • $1.00/pip</p>
+                <div class="tool-container">
+                    <div class="calc-card">
+                        <div class="input-group"><label>Balance ($)</label><input type="number" id="balance" value="10000" min="1" class="calc-input"></div>
+                        <div class="input-group"><label>Risk (%)</label><input type="number" id="risk" value="1" min="0.1" step="0.1" class="calc-input"></div>
+                        <div class="input-group"><label>Stop Loss (pips)</label><input type="number" id="stopLoss" value="50" min="1" class="calc-input"></div>
+                        <button id="calcBtn" class="btn-primary">Calculate Lots</button>
+                        <div id="calcResult" class="result">--</div>
+                        <div class="note">Contract Size: 100 oz · Pip Value: $1.00/lot</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION (Manifesto) -->
+        <section id="about" class="full-section">
+            <div class="page-content-inner about-section">
+                <h1 class="page-title">ASSO / <span class="accent">About</span></h1>
+                <p class="subtitle">Asymmetric Solo. Satu Orang. Satu Standar.</p>
+                <div class="manifesto">
+                    <p>ASSO lahir dari satu keyakinan sederhana: setiap sistem bisa bekerja lebih baik dari defaultnya. Windows yang lambat bukan nasib. Android yang dibatasi bukan standar. Strategi trading yang kalah bukan karena pasar — tapi karena eksekusi.</p>
+                    <p>Nama "Asymmetric" bukan kebetulan. Ini adalah pinjaman dari dunia trading — konsep bahwa risiko kecil bisa menghasilkan reward besar jika pendekatannya tepat. Metodologi yang sama berlaku untuk setiap pekerjaan teknis: investasi effort yang terukur untuk hasil yang jauh melebihi ekspektasi.</p>
+                    <p>"Solo" berarti akuntabilitas penuh. Tidak ada tim yang disalahkan, tidak ada proses yang hilang di celah komunikasi. Satu orang yang bertanggung jawab dari awal sampai akhir — dan itu bukan kelemahan, itu jaminan konsistensi.</p>
+                    <blockquote>"A website is the window through which the world sees your talent. Don't just build a page; build an experience that reflects your precision."</blockquote>
+                    <p class="signature">— Wealthy Individual</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Bubble WhatsApp fixed -->
+    <a href="https://wa.me/62895327188128" class="wa-bubble" title="Chat WhatsApp">
+        <span class="wa-icon">💬</span>
+    </a>
+
+    <!-- Footer fixed di bawah semua section -->
     <footer>
         Engineering Excellence oleh Alfito (Founder ASSO)<br>
-        <span class="footer-links">
-            <a href="https://asso-tech.great-site.net" target="_blank" rel="noopener">ASSO.dev</a> — Perbaikan Software & Hardware
-        </span>
+        <span class="footer-links"><a href="https://asso-tech.great-site.net" target="_blank" rel="noopener">ASSO.dev</a> — Perbaikan Software & Hardware</span>
     </footer>
 
     <script src="script.js"></script>
