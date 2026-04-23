@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools – Lot Calculator | Ruang.Trading × ASSO.dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-brand">
+            <a href="/" class="logo">ASSO</a>
+            <span class="brand-partner">× Ruang.Trading</span>
+            <span class="badge">v3.0</span>
+        </div>
+        <nav>
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/portfolio.html">Portfolio</a>
+    <a href="/tools.html">Tools</a>
+    <a href="https://wa.me/62895327188128" class="btn-wa">Hubungi WA</a>
+    <a href="https://asso.dev" class="btn-tech" target="_blank" rel="noopener">ASSO.dev ↗</a>
+</nav>
+    </header>
+
+    <main class="page-content fade-in">
+        <h1 class="page-title">Lot Size <span class="accent">Calculator</span></h1>
+        <p class="subtitle">XAUUSD • Contract size 100 oz • $1.00/pip</p>
+
+        <div class="tool-container">
+            <div class="calc-card">
+                <div class="input-group">
+                    <label>Balance ($)</label>
+                    <input type="number" id="balance" value="10000" min="1" class="calc-input">
+                </div>
+                <div class="input-group">
+                    <label>Risk (%)</label>
+                    <input type="number" id="risk" value="1" min="0.1" step="0.1" class="calc-input">
+                </div>
+                <div class="input-group">
+                    <label>Stop Loss (pips)</label>
+                    <input type="number" id="stopLoss" value="50" min="1" class="calc-input">
+                </div>
+                <button id="calcBtn" class="btn-primary">Calculate Lots</button>
+                <div id="calcResult" class="result">--</div>
+                <div class="note">Contract Size: 100 oz · Pip Value: $1.00/lot</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Engineering Excellence oleh Alfito (Founder ASSO)<br>
+        <span class="footer-links">
+            <a href="https://asso.dev" target="_blank" rel="noopener">ASSO.dev</a> — Perbaikan Software & Hardware
+        </span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
