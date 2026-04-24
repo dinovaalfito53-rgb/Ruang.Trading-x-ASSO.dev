@@ -7,6 +7,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Tambahan style marquee hanya untuk halaman ini -->
+    <style>
+        /* Pastikan container tidak overflow dan tidak bisa diseleksi */
+        .carousel-container {
+            overflow: hidden;
+            user-select: none;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+            padding: 15px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        /* Track yang berjalan */
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+            animation: marqueeScroll 25s linear infinite;
+        }
+        /* Animasi geser separuh konten (karena konten sudah digandakan) */
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        /* Opsional: jeda animasi saat hover */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+        /* Hilangkan tombol navigasi */
+        .carousel-btn {
+            display: none !important;
+        }
+        /* Kartu di dalam marquee */
+        .portfolio-card {
+            flex-shrink: 0;
+            width: 340px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+        .portfolio-card:hover {
+            border-color: rgba(0,255,65,.25);
+            box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 24px var(--green-glow);
+        }
+        .portfolio-img {
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 200px;
+        }
+        .portfolio-info {
+            padding: 1.2rem;
+        }
+        .portfolio-info h3 {
+            font-family: var(--mono);
+            color: var(--green);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-info p {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+        /* Responsif: kurangi lebar kartu di mobile */
+        @media(max-width:640px){
+            .portfolio-card {
+                width: 280px;
+            }
+            .portfolio-img {
+                height: 160px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="cursor-dot"></div>
@@ -39,62 +117,103 @@
     </section>
 
     <section class="section">
-    <div class="carousel-container">
-        <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
-        <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- ===== 4 Kartu Asli ===== -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/ASSO Portofolio.png" alt="Ruang.Trading × ASSO.dev" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">Ruang.Trading</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ruang.Trading × ASSO.dev</h3>
+                        <p>Landing page spesialis frontend, navigasi multi-halaman, desain terminal dark.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">OSIS by ASSO</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>OSIS SMA NU by ASSO</h3>
+                        <p>Website organisasi dengan transisi halaman penuh (full‑page) dan animasi halus.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/ASSO.dev Official.png" alt="ASSO.dev Official" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">ASSO.dev</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ASSO.dev — Official Tech Site</h3>
+                        <p>Etalase jasa tech fixing (OS, Android, MQL5) dengan identitas terminal khas.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/rootnode.png" alt="RootNode — Digital Garden" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">RootNode</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>RootNode — Digital Garden</h3>
+                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry dengan status Sprout / Growing / Evergreen.</p>
+                    </div>
+                </div>
 
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Card 1 -->
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="images/ASSO Portofolio.png" alt="Ruang.Trading × ASSO.dev">
+                <!-- ===== Duplikasi 4 Kartu (untuk loop mulus) ===== -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/ASSO Portofolio.png" alt="Ruang.Trading × ASSO.dev" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">Ruang.Trading</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ruang.Trading × ASSO.dev</h3>
+                        <p>Landing page spesialis frontend, navigasi multi-halaman, desain terminal dark.</p>
+                    </div>
                 </div>
-                <div class="portfolio-info">
-                    <h3>Ruang.Trading × ASSO.dev</h3>
-                    <p>Landing page spesialis frontend, navigasi multi-halaman, desain terminal dark.</p>
-                    <a href="https://asso-frontend.vercel.app" class="btn-outline small" target="_blank">Live Demo</a>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">OSIS by ASSO</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>OSIS SMA NU by ASSO</h3>
+                        <p>Website organisasi dengan transisi halaman penuh (full‑page) dan animasi halus.</p>
+                    </div>
                 </div>
-            </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/ASSO.dev Official.png" alt="ASSO.dev Official" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">ASSO.dev</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ASSO.dev — Official Tech Site</h3>
+                        <p>Etalase jasa tech fixing (OS, Android, MQL5) dengan identitas terminal khas.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/rootnode.png" alt="RootNode — Digital Garden" style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">RootNode</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>RootNode — Digital Garden</h3>
+                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry dengan status Sprout / Growing / Evergreen.</p>
+                    </div>
+                </div>
+            </div><!-- /carousel-track -->
+        </div><!-- /carousel-container -->
+    </section>
 
-            <!-- Card 2 -->
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO">
-                </div>
-                <div class="portfolio-info">
-                    <h3>OSIS SMA NU by ASSO</h3>
-                    <p>Website organisasi dengan transisi halaman penuh (full‑page) dan animasi halus.</p>
-                    <a href="https://osissmanu.great-site.net" class="btn-outline small" target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="images/ASSO.dev Official.png" alt="ASSO.dev Official">
-                </div>
-                <div class="portfolio-info">
-                    <h3>ASSO.dev — Official Tech Site</h3>
-                    <p>Etalase jasa tech fixing (OS, Android, MQL5) dengan identitas terminal khas.</p>
-                    <a href="https://asso-tech.great-site.net" class="btn-outline small" target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- Card 4: RootNode Digital Garden -->
-            <div class="portfolio-card">
-                <div class="portfolio-img">
-                    <img src="images/rootnode.png" alt="RootNode — Digital Garden">
-                </div>
-                <div class="portfolio-info">
-                    <h3>RootNode — Digital Garden</h3>
-                    <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry dengan status Sprout / Growing / Evergreen.</p>
-                    <a href="#" class="btn-outline small">Live Demo</a>
-                </div>
-            </div>
-        </div><!-- /carousel-track -->
-    </div><!-- /carousel-container -->
-</section>
-    
     <footer class="footer">
         <div class="footer-divider"></div>
         <div class="footer-inner">
@@ -111,64 +230,5 @@
 </div>
 
 <script src="js/script.js"></script>
-<script>
-    // Carousel infinity (hanya di halaman ini)
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.getElementById('carouselTrack');
-        if (!track) return;
-
-        const cards = Array.from(track.children);
-        const prevBtn = document.querySelector('.carousel-btn.prev');
-        const nextBtn = document.querySelector('.carousel-btn.next');
-
-        // Clone untuk efek loop
-        const firstClone = cards[0].cloneNode(true);
-        const lastClone = cards[cards.length - 1].cloneNode(true);
-        track.appendChild(firstClone);
-        track.insertBefore(lastClone, cards[0]);
-
-        const allCards = Array.from(track.children);
-        let currentIndex = 1; // mulai dari card asli pertama
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
-        function updateCarousel(animate = true) {
-            track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
-
-        function moveToIndex(index) {
-            currentIndex = index;
-            updateCarousel(true);
-        }
-
-        // Loop setelah transisi selesai
-        track.addEventListener('transitionend', () => {
-            if (currentIndex === allCards.length - 1) {
-                // di clone pertama (card terakhir palsu) → balik ke awal tanpa animasi
-                currentIndex = 1;
-                updateCarousel(false);
-            } else if (currentIndex === 0) {
-                // di clone terakhir (card pertama palsu) → ke akhir asli
-                currentIndex = allCards.length - 2;
-                updateCarousel(false);
-            }
-        });
-
-        prevBtn.addEventListener('click', () => moveToIndex(currentIndex - 1));
-        nextBtn.addEventListener('click', () => moveToIndex(currentIndex + 1));
-
-        // Auto-slide setiap 4 detik
-        setInterval(() => moveToIndex(currentIndex + 1), 4000);
-
-        // Update ukuran saat resize
-        window.addEventListener('resize', () => {
-            const newWidth = cards[0].getBoundingClientRect().width;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${currentIndex * newWidth}px)`;
-            setTimeout(() => { track.style.transition = 'transform 0.5s ease-in-out'; }, 0);
-        });
-    });
-</script>
 </body>
 </html>
