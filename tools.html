@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | ASSO × Ruang.Trading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="scroll-bar"></div>
+<div class="toast-wrap"></div>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">[</span><span class="logo-name">ASSO</span><span class="logo-bracket">]</span><span class="logo-tag">× Ruang.Trading</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="portfolio.html">Portofolio</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://wa.me/62895327188128" class="nav-cta">Hubungi WA</a>
+    <a href="https://asso-tech.great-site.net" target="_blank" rel="noopener" class="nav-link-external">ASSO.dev ↗</a>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-wrap">
+    <section class="page-hero">
+        <div class="page-hero-breadcrumb"><a href="index.html">Home</a> / <span>Tools</span></div>
+        <h1 class="page-hero-title">Lot Size <span style="color:var(--green);">Calculator</span></h1>
+        <p class="page-hero-sub">XAUUSD • Contract size 100 oz • $1.00/pip</p>
+    </section>
+
+    <section class="section" style="display:flex; justify-content:center;">
+        <div style="max-width:420px; width:100%; background:var(--surface); border:1px solid var(--border); padding:32px 28px;">
+            <div class="input-group" style="margin-bottom:16px;">
+                <label style="display:block; font-size:.8rem; color:var(--green); margin-bottom:6px;">Balance ($)</label>
+                <input type="number" id="balance" value="10000" min="1" style="width:100%; background:var(--bg); border:1px solid var(--border); color:var(--text); padding:10px; font-family:var(--mono); outline:none;">
+            </div>
+            <div class="input-group" style="margin-bottom:16px;">
+                <label style="display:block; font-size:.8rem; color:var(--green); margin-bottom:6px;">Risk (%)</label>
+                <input type="number" id="risk" value="1" min="0.1" step="0.1" style="width:100%; background:var(--bg); border:1px solid var(--border); color:var(--text); padding:10px; font-family:var(--mono); outline:none;">
+            </div>
+            <div class="input-group" style="margin-bottom:20px;">
+                <label style="display:block; font-size:.8rem; color:var(--green); margin-bottom:6px;">Stop Loss (pips)</label>
+                <input type="number" id="stopLoss" value="50" min="1" style="width:100%; background:var(--bg); border:1px solid var(--border); color:var(--text); padding:10px; font-family:var(--mono); outline:none;">
+            </div>
+            <button id="calcBtn" class="btn btn-green" style="width:100%;">Calculate Lots</button>
+            <div id="calcResult" style="font-family:var(--mono); font-size:1.6rem; text-align:center; margin:20px 0 10px; color:var(--green); min-height:2.5rem;">--</div>
+            <div style="font-size:.7rem; color:var(--text-dim); text-align:center;">Contract Size: 100 oz · Pip Value: $1.00/lot</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <div class="footer-inner">
+            <div class="footer-logo"><span class="fl-bracket">[</span>ASSO<span class="fl-bracket">]</span> × Ruang.Trading</div>
+            <div class="footer-copy">© 2025 ASSO · Engineering Excellence oleh Alfito (Founder ASSO).</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="https://asso-tech.great-site.net" target="_blank" rel="noopener">ASSO.dev</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
