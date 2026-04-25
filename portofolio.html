@@ -7,39 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Tambahan style marquee hanya untuk halaman ini -->
     <style>
-        /* Pastikan container tidak overflow dan tidak bisa diseleksi */
         .carousel-container {
             overflow: hidden;
             user-select: none;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255,255,255,0.02);
             backdrop-filter: blur(5px);
             padding: 15px 0;
             border-radius: 12px;
             border: 1px solid var(--border);
         }
-        /* Track yang berjalan */
         .carousel-track {
             display: flex;
             gap: 30px;
             width: max-content;
             animation: marqueeScroll 25s linear infinite;
         }
-        /* Animasi geser separuh konten (karena konten sudah digandakan) */
         @keyframes marqueeScroll {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
         }
-        /* Opsional: jeda animasi saat hover */
         .carousel-container:hover .carousel-track {
             animation-play-state: paused;
         }
-        /* Hilangkan tombol navigasi */
         .carousel-btn {
             display: none !important;
         }
-        /* Kartu di dalam marquee */
         .portfolio-card {
             flex-shrink: 0;
             width: 340px;
@@ -75,14 +68,9 @@
             font-size: 0.85rem;
             margin-bottom: 0;
         }
-        /* Responsif: kurangi lebar kartu di mobile */
         @media(max-width:640px){
-            .portfolio-card {
-                width: 280px;
-            }
-            .portfolio-img {
-                height: 160px;
-            }
+            .portfolio-card { width: 280px; }
+            .portfolio-img { height: 160px; }
         }
     </style>
 </head>
@@ -120,20 +108,37 @@
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
                 <!-- ===== 4 Kartu Asli ===== -->
+                <!-- 1. CreativeHub Dashboard -->
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/ASSO Portofolio.png" alt="Ruang.Trading × ASSO.dev" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/creativehub.png" alt="CreativeHub Dashboard"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
-                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">Ruang.Trading</span>
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">CreativeHub</span>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ruang.Trading × ASSO.dev</h3>
-                        <p>Landing page spesialis frontend, navigasi multi-halaman, desain terminal dark.</p>
+                        <h3>CreativeHub Dashboard</h3>
+                        <p>Dashboard manajemen proyek kreatif dengan progress tracking, aktivitas tim, dan UI modern.</p>
                     </div>
                 </div>
+                <!-- 2. EcoTech Landing Page -->
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/ecotech.png" alt="EcoTech — Sustainable Technology"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">EcoTech</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>EcoTech — Sustainable Future</h3>
+                        <p>Landing page perusahaan teknologi hijau dengan animasi scroll, statistik, dan CTA interaktif.</p>
+                    </div>
+                </div>
+                <!-- 3. OSIS SMA NU by ASSO (tetap) -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">OSIS by ASSO</span>
                     </div>
@@ -142,44 +147,49 @@
                         <p>Website organisasi dengan transisi halaman penuh (full‑page) dan animasi halus.</p>
                     </div>
                 </div>
+                <!-- 4. RootNode Digital Garden (tetap) -->
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/ASSO.dev Official.png" alt="ASSO.dev Official" style="width:100%;height:100%;object-fit:cover;display:block;"
-                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
-                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">ASSO.dev</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>ASSO.dev — Official Tech Site</h3>
-                        <p>Etalase jasa tech fixing (OS, Android, MQL5) dengan identitas terminal khas.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card reveal">
-                    <div class="portfolio-img">
-                        <img src="images/rootnode.png" alt="RootNode — Digital Garden" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/rootnode.png" alt="RootNode — Digital Garden"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">RootNode</span>
                     </div>
                     <div class="portfolio-info">
                         <h3>RootNode — Digital Garden</h3>
-                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry dengan status Sprout / Growing / Evergreen.</p>
+                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry.</p>
                     </div>
                 </div>
 
-                <!-- ===== Duplikasi 4 Kartu (untuk loop mulus) ===== -->
+                <!-- ===== Duplikasi 4 Kartu (loop mulus) ===== -->
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/ASSO Portofolio.png" alt="Ruang.Trading × ASSO.dev" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/creativehub.png" alt="CreativeHub Dashboard"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
-                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">Ruang.Trading</span>
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">CreativeHub</span>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ruang.Trading × ASSO.dev</h3>
-                        <p>Landing page spesialis frontend, navigasi multi-halaman, desain terminal dark.</p>
+                        <h3>CreativeHub Dashboard</h3>
+                        <p>Dashboard manajemen proyek kreatif dengan progress tracking, aktivitas tim, dan UI modern.</p>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/ecotech.png" alt="EcoTech — Sustainable Technology"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">EcoTech</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>EcoTech — Sustainable Future</h3>
+                        <p>Landing page perusahaan teknologi hijau dengan animasi scroll, statistik, dan CTA interaktif.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-img">
+                        <img src="images/OSIS by ASSO.png" alt="OSIS SMA NU by ASSO"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">OSIS by ASSO</span>
                     </div>
@@ -190,24 +200,14 @@
                 </div>
                 <div class="portfolio-card reveal">
                     <div class="portfolio-img">
-                        <img src="images/ASSO.dev Official.png" alt="ASSO.dev Official" style="width:100%;height:100%;object-fit:cover;display:block;"
-                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
-                        <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">ASSO.dev</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>ASSO.dev — Official Tech Site</h3>
-                        <p>Etalase jasa tech fixing (OS, Android, MQL5) dengan identitas terminal khas.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card reveal">
-                    <div class="portfolio-img">
-                        <img src="images/rootnode.png" alt="RootNode — Digital Garden" style="width:100%;height:100%;object-fit:cover;display:block;"
+                        <img src="images/rootnode.png" alt="RootNode — Digital Garden"
+                             style="width:100%;height:100%;object-fit:cover;display:block;"
                              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
                         <span style="display:none;width:100%;height:100%;background:#161B22;color:#00FF41;font-family:monospace;font-size:14px;align-items:center;justify-content:center;">RootNode</span>
                     </div>
                     <div class="portfolio-info">
                         <h3>RootNode — Digital Garden</h3>
-                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry dengan status Sprout / Growing / Evergreen.</p>
+                        <p>Platform portofolio hidup berbasis HTML/CSS/JS vanilla. Terminal interaktif, knowledge graph, dan project registry.</p>
                     </div>
                 </div>
             </div><!-- /carousel-track -->
